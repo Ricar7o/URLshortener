@@ -81,4 +81,7 @@ class Link < ActiveRecord::Base
   rescue URI::InvalidURIError
     self.errors.add(:url, "is not in the right format")
   end
+
+  # TODO: Verify that a URL has not already been shortened. If it has, return the original shortened URL
+
 end
