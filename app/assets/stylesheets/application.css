@@ -17,4 +17,18 @@ body{background: #2f8cd6;
 
 }
 
-h1 { color: white;}
+h1 { 
+	color: #2f8cd6;
+	text-shadow: 1px 1px 1px #000000;
+    filter: dropshadow(color=#000000, offx=1, offy=1);
+}
+
+.row.stuff {
+	padding-top: 30px;
+	background: rgba(255, 255, 255, .6);
+	margin-top: 60px;
+	-moz-border-radius: 18px;
+	-webkit-border-radius: 18px;
+	border-radius: 18px;
+}
+

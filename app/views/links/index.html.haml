@@ -1,8 +1,8 @@
-.row
-  .small-12.columns.text-center
-    %h1 Shortly
-
 .row.stuff
+  .small-12.columns.text-center
+    %h1
+      %img{alt: "Makersquare logo", :src => "http://ping.themakersquare.com/assets/makersquare-logo-f85f9f7617aa1e3828ef1c21a14b866b.png"}
+    %h1 shrt.MAKER
   .small-12.small-centered.large-6.large-centered.columns
     = form_for @link, html: {class: "custom"} do |f|
       .row.collapse
@@ -12,7 +12,7 @@
       .row
         .small-6.small-centered.columns= f.text_field :title, placeholder: "Alias (no spaces)"
         .small-4.small-centered.columns
-          = f.submit "Shorten", class: "button expand"
+          = f.submit "Shorten", class: "button large expand success"
 
 - if @shortened_link
   .row
