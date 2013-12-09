@@ -1,22 +1,8 @@
-== ChaiONE Code Challenge
-*URL Shortener*
+== URL shortener
 
-Create a url shortening service like Bit.ly or TinyURL
+Building this to enable MakerSquare to shorten their links and share them online.
 
-The application should contain the following features:
-
-- Take any valid http or https url and create a shortened url from it.
-- Duplicate urls should return the same shortened url
-- The shortened url should redirect to the original url
-- Write the service in ruby using whatever framework you prefer Rails, Sinatra, etc. Deploy the application to Heroku and add heroku@chaione.com as a collaborator.
-
-*Going Further*
-
-Feel free to include additional features as you see fit.
-
-Additional features could include (but not limited to):
-
-- An API for accessing the services
-- Custom aliases for urls
-- Bookmarklets & widgets
-- Reporting & Statistics
+- Admins will be able to shorten a link for a limited time or permanently.
+- They will be prompted automatically with a keyword, similar to ShoutKey or choose their own.
+- Duplicate urls return the same shortened url
+- The shortened url redirects to the original url
