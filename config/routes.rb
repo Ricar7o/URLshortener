@@ -12,7 +12,7 @@ URLshortener::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   get ":link",    to: "links#show"
-  resources :links, only: [:create]
+  resources :links, only: [:create, :destroy]
 
   # Sample resource route with options:
   #   resources :products do

@@ -1,3 +1,26 @@
 // Place all the styles related to the links controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+@import "foundation/components/global";
+
+input[type="text"] {
+  font-size: 1em;
+}
+
+input[type="range"] {
+  width: 100%;
+  height: 2em;
+}
+
+i.fi-x {
+  color: $alert-color;
+}
+
+table {
+  width: 100%;
+}
+
+.delete_icon a {
+  display: inline-block;
+}
