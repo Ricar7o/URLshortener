@@ -30,6 +30,24 @@ function update_time_label() {
   $('#time_label').text("Expires: " + time_options[$('#time_slider').val()]);
 };
 
+jQuery.fn.selectText = function(){
+    var doc = document
+        , element = this[0]
+        , range, selection
+    ;
+    if (doc.body.createTextRange) {
+        range = document.body.createTextRange();
+        range.moveToElementText(element);
+        range.select();
+    } else if (window.getSelection) {
+        selection = window.getSelection();
+        range = document.createRange();
+        range.selectNodeContents(element);
+        selection.removeAllRanges();
+        selection.addRange(range);
+    }
+};
+
 // $('#by_hits').click(function() {
 //   $('#link_list li').sort(sort_by_hits).appendTo('#link_list');
 // });
@@ -44,8 +62,12 @@ $('#by_date').click(function() {
 
 $('#time_slider').change(update_time_label);
 
+$('#shortened_link').click(function() {
+  $('#shortened_link').selectText();
+});
+
 $(document).ready(function() {
   setTimeout(function() {
     $('.flash').slideUp();
-  }, 5000);
+  }, 3000);
 });

@@ -1,0 +1,4 @@
+$('.result').css('display', 'none');
+$('#shortened_link').html('<%= j @shortened_link %>');
+$('.result').css('display', 'block');
+$('html, body').animate( {scrollTop: $('#shortened_link').offset().top - $(window).height()}, 100);

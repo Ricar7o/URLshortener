@@ -28,9 +28,11 @@ class LinksController < ApplicationController
           @shortened_link = "#{request.protocol}#{request.host_with_port}/#{@link.title}"
           format.html { redirect_to root_path({shortened_link: @shortened_link}), flash: {success: "Your shortened link was created successfully"} }
           format.json { render :json => @link.to_json }
+          format.js { @shortened_link }
         else
           format.html { redirect_to root_path, alert: @link.errors.full_messages.to_sentence }
-          format.json {render :json => {error: "unprocessable entity"}.to_json }
+          format.json { render :json => {error: "unprocessable entity"}.to_json }
+          format.js { flash.now(alert: @link.errors.full_messages.to_sentence)}
         end
       end
     end
