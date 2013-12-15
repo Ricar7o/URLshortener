@@ -1,4 +1,9 @@
-$('.result').css('display', 'none');
-$('#shortened_link').html('<%= j @shortened_link %>');
-$('.result').css('display', 'block');
+$('.flash').html('<%= j render(partial: "layouts/flash", locals: { flash: flash }).html_safe %>');
+$('.flash').toggle();
+$('.result').slideUp('fast', function() {
+  $('.result').css('display', 'none');
+  $('#shortened_link').html('<%= j @shortened_link %>');
+  $('#shortened_link').after('<a href="<%= @shortened_link %>"<span class="success radius label">Go</span></a>');
+});
+$('.result').slideDown('fast');
 $('html, body').animate( {scrollTop: $('#shortened_link').offset().top - $(window).height()}, 100);

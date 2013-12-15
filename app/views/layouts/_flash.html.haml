@@ -1,0 +1,5 @@
+- flash.each do |name, msg|
+  .row.text-center
+    = content_tag :div, data: {alert: ''}, class: "alert-box #{name}" do
+      = msg[0]
+      = link_to '&times;'.html_safe, '#', class: 'close'

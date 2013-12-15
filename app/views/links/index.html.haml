@@ -21,7 +21,7 @@
   .small-12.large-centered.columns.text-center
     %h3#shortened_link
       = @shortened_link.to_s
-    %span.success.radius.label Go
+    = link_to '<span class="success radius label">Go</span>'.html_safe, @shortened_link.url if @shortened_link
     %span.secondary.radius.label Copy
 
 - if @links
