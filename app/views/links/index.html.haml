@@ -3,14 +3,20 @@
     %h1
       = link_to "Shortly", root_path
 
-= form_for(@link, remote: true) do |f|
+= form_for(@link, remote: true, html: {:'data-abide' => '' }) do |f|
   .row
-    .small-12.small-centered.medium-7.large-6.columns
-      = f.url_field :url, autofocus: true, required: true, placeholder: "URL to shorten"
-    .small-6.small-centered.medium-3.large-3.columns
-      = f.text_field :title, placeholder: "Alias"
+    .small-12.medium-8.medium-offset-2.large-6.large-offset-3.columns.input-wrapper
+      = f.label :url do
+        = 'URL to shorten <small>Required</small>.'.html_safe
+      = f.url_field :url, autofocus: true, required: true, placeholder: "http://en.wikipedia.org/wiki/URL_shortening"
+      %small.error Valid URL required
   .row
-    .small-6.small-centered.medium-4.large-3.large-centered.columns
+    .small-6.small-offset-3.medium-4.medium-offset-4.large-4.large-offset-4.columns
+      = f.label :title do
+        = 'Pick an alias <small>Optional</small>'.html_safe
+      = f.text_field :title, placeholder: "alias"
+  .row
+    .small-6.small-centered.medium-3.large-3.large-centered.columns
       %label.text-center#time_label Expires: 15 min.
       %input#time_slider{type: "range", min: 0, max: 4, value: 0, data: {highlight: true}}
     %br

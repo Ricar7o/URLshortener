@@ -41,10 +41,11 @@ table {
   display: inline-block;
 }
 
-.flash {
+.result {
   display: none;
 }
 
-.result {
-  display: none;
+.confirmed {
+  @extend .error;
+  background: $success-color !important;
 }

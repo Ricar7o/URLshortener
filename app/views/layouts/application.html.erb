@@ -18,5 +18,10 @@
 
     <%= yield %>
     <%= javascript_include_tag "application" %>
+<div class="debug_zone">
+  <p>Params: <%= params.to_json %></p>
+  <p>Flash: <%= flash.to_json %></p>
+  <p>Flash message: <%= flash.each {|name, msg| msg.to_json } %>
+</div>
   </body>
 </html>

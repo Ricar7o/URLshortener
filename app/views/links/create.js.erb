@@ -6,4 +6,6 @@ $('.result').slideUp('fast', function() {
   $('#shortened_link').after('<a href="<%= @shortened_link %>"<span class="success radius label">Go</span></a>');
 });
 $('.result').slideDown('fast');
-$('html, body').animate( {scrollTop: $('#shortened_link').offset().top - $(window).height()}, 100);
+$('html, body').animate( {scrollTop: 300}, 100);
+// $('html, body').animate( {scrollTop: $('#shortened_link').offset().top - $(window).height()}, 100);
+$('#shortened_link').selectText();
